@@ -1,74 +1,98 @@
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
 }
 
+/* Stars Background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('stars.png') repeat;
+  z-index: -1;
+  animation: twinkle 20s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Header */
 header {
   text-align: center;
-  background: #4CAF50;
-  color: #fff;
-  padding: 20px;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
 }
 
-header img.profile-photo {
+.profile-photo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 4px solid #fff;
+}
+
+.tagline {
+  font-style: italic;
+  color: #ccc;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  display: inline-block;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
+  font-weight: bold;
 }
 
+nav ul li a:hover {
+  color: #4CAF50;
+}
+
+/* Sections */
 section {
-  padding: 20px;
+  padding: 50px 20px;
+  text-align: center;
 }
 
 h2 {
   border-bottom: 2px solid #4CAF50;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
+/* Skills Grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
+  gap: 20px;
   list-style: none;
   padding: 0;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 10px;
-  background: #333;
-  color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header img.profile-photo {
-    width: 120px;
-    height: 120px;
-  }
-
-  nav ul li {
-    display: block;
-    margin: 5px 0;
-  }
+  background: #111;
+  color: #fff;
 }
